@@ -84,11 +84,13 @@ namespace LeapMotionCoOrdinates
                     Screen.x = _transformationInverse[0, 0] * Leap.x + _transformationInverse[1, 0] * Leap.y + _transformationInverse[2, 0] * Leap.z + _transformationInverse[3, 0];
                     Screen.y = _transformationInverse[0, 1] * Leap.x + _transformationInverse[1, 1] * Leap.y + _transformationInverse[2, 1] * Leap.z + _transformationInverse[3, 1];
                     Screen.z = _transformationInverse[0, 2] * Leap.x + _transformationInverse[1, 2] * Leap.y + _transformationInverse[2, 2] * Leap.z + _transformationInverse[3, 2];
-                    PointPair pointPair = new PointPair(Screen.x, Screen.y);
-                    PointPairList pointPairs = new PointPairList();
-                    pointPairs.Add(pointPair);
-                    LineItem line = graphPane.AddCurve("", pointPairs, Color.Black);
-                    line.Line.IsVisible = false;
+                    if (hand.GrabStrength >= .5)
+                    {
+                        PointPair pointPair = new PointPair(Screen.x, Screen.y);
+                        PointPairList pointPairs = new PointPairList();
+                        pointPairs.Add(pointPair);
+                        LineItem line = graphPane.AddCurve("", pointPairs, Color.Black);
+                    }
                     zedGraphControl1.Invalidate();
                     ScreenPosX.Text = Screen.x.ToString();
                     ScreenPosY.Text = Screen.y.ToString();
