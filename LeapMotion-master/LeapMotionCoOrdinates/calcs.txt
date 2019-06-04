@@ -1,0 +1,50 @@
+Origin_Screen
+x
+y
+z
+
+X-Axis
+x1	y1	z1
+Y-Axis
+x2	y2	z2
+Z-Axis
+y1*z2 - z1*y2	z1*x2 - x1*z2	x1*y2 - y1*x2
+x3	y3	z3
+
+Orientation
+x1	x2	x3
+y1	y2	y3
+z1	z2	z3
+
+Transposed_orientation
+x1	y1	z1
+x2	y2	z2
+x3	y3	z3
+
+-Transposed_Orientation*Origin
+-(x1*x + y1*y + z1*z)
+.
+.
+
+
+Inversed_HTM
+x1	y1	z1	-(x1*x + y1*y + z1*z)
+x2	y2	z2	-(x2*x + y2*y + z2*z)
+z1	z2	z3	-(x3*x + y3*y + z3*z)
+0	0	0	1
+
+Point_Screen
+a
+b
+c
+1
+
+Point*Inversed_HTM
+
+Qt	-Qt*Origin
+0t	1
+
+x1*a + y1*b + z1*c +(-(x1*x + y1*y + z1*z))
+.
+.
+1

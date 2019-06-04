@@ -1,0 +1,4 @@
+1. raspberry pi support
+2. screen size limits
+3. USB 2.0/3.0 support and operation
+4. Possible to integrate 2nd LeapMotion?
